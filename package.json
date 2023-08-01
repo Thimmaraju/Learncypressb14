@@ -1,0 +1,17 @@
+{
+  "name": "learncypressb14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raju",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.17.1"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.5.1"
+  }
+}
