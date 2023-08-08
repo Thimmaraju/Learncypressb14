@@ -11,6 +11,8 @@ module.exports = defineConfig({
     //"viewportWidth": 820,
     //"viewportHeight": 1180,
     "retries" : {"runMode":1},
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+    excludeSpecPattern:"cypress/e2e/regressiontests/actions.cy.js",
 
     env: {
 
@@ -19,6 +21,8 @@ module.exports = defineConfig({
         "password": "admin123"
 
     },
+    "video":true,
+    //"videosFolder":"cypress/Raju",
 
 
     setupNodeEvents(on, config) {
