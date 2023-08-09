@@ -1,8 +1,10 @@
 class dashBoardPage{
 
-     dashBoardMenu(){
+     dashBoardMenu = "Dashboard";
 
-        return "Dashboard"
+     adminMenu(){
+
+       return "Admin"
      }
 
 }

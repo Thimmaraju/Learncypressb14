@@ -20,6 +20,14 @@ class loginPage{
         return 'button[type="submit"]'
     }
 
+     loginwithcreds(username, password){
+
+        cy.get(this.usernameInput()).type(username)
+
+        cy.get(this.passwordInput()).type(password)
+
+        cy.get(this.loginButton()).click()
+     }
 
 }
 
