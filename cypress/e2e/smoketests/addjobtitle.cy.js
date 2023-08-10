@@ -40,7 +40,7 @@ describe('Verify Add Job Functionality', () => {
 
          cy.get(jobtitle.addButton()).click()
 
-        cy.get(jobtitle.jobTitleInput()).eq(2).type("Direcytor HR Write or paste your text into this online character counter Write or paste your text into this o")
+        cy.get(jobtitle.jobTitleInput()).last().type("Direcytor HR Write or paste your text into this online character counter Write or paste your text into this o")
 
         cy.contains(jobtitle.jobTitleErrorMessage()).should("be.visible")
 

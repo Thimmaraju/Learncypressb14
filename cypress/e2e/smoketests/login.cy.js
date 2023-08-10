@@ -25,17 +25,17 @@ describe('Validate Login functioanlity', () => {
     it.only('Verify login with Valid input details', () => {
         
 
-        cy.get(login.usernameInput()).type(username)
+        cy.xpath(login.usernameInput()).type(username)
 
         cy.get(login.passwordInput()).type(password)
 
         cy.get(login.loginButton()).click()
 
-        cy.contains(dasboard.dashBoardMenu()).should("be.visible")
+        cy.contains(dasboard.dashBoardMenu).should("be.visible")
     })
 
 
-    specify.only('Verify login with Valid username and Invalid Password', () => {
+    specify('Verify login with Valid username and Invalid Password', () => {
         
 
         cy.get("input[name='username']").type("Admin")
