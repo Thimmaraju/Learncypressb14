@@ -1466,3 +1466,444 @@ how it will be usefull
 
 
   
+Locators :
+
+========================
+
+
+cypress
+-------
+cy.get(csslocator).click()
+
+cy.get(csslocator).type("fhgwbf")
+
+cy.get(csslocator).should("be.visible")
+
+
+By default Cypress support only CSS locators 
+
+
+-----------------
+
+#app > div.orangehrm-login-layout > div > div.orangehrm-login-container > div > div.orangehrm-login-slot > div.orangehrm-login-form > form > div:nth-child(2) > div > div:nth-child(2) > input
+
+
+input[name="username"]
+
+-------------------------------
+
+Selenium 
+
+Id
+class
+name
+xpath
+css
+linktext
+partiallinktext 
+tagname
+
+findelementBy.Id()
+
+
+Cypress
+
+css
+
+
+Text 
+
+cy.get(csslocator)
+
+cy.contains(text)
+
+-----------------------------
+
+can we use xpath using cypress
+
+
+cy.xpath(xpathlocator)
+
+
+Yes 
+
+but we have to use external library - xpath plugin
+
+==================================
+
+XML path
+
+2 types 
+
+
+1. Absolute xpath 
+
+   will always from root node 
+   / - single slash
+   
+   ex: 
+   
+   /html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input
+
+2. Relative xpath  
+
+  will always starts from relative node 
+  
+  // - double 
+  
+  
+  //input[@placeholder="Username"]
+  
+  
+  
+  cy.get('//input[@placeholder="Username"]').type("Admin")
+  
+  
+ ==============================================================
+ 
+ 
+ 1. basic xpath 
+ 
+  //tagname[@attributename="attributevalue"]
+  
+  ex:
+  
+  //input[@placeholder="Password"]
+  
+  ex2:
+  //input[@value="Check availability"]
+  
+  
+2. Text
+   
+   //tagname[text()='fulltext"]
+   
+   ex: 
+   
+     //p[text()='Forgot your password? ']
+	 
+   ex2: 
+   
+   //span[text()='Admin']
+   
+   cy.get(csslocator)
+   
+   cy.contains(text)
+   
+   cy.xpath(xpathlocator)
+   
+   Partial Text
+   --------------
+   
+   //tagname[contains(.,"partialtext")]
+   
+   //p[contains(.,'Forgot your ')]
+   
+   
+   //p[contains(.,"With Cypress, you can")]
+   
+  ex2: 
+  
+     //p[contains(.,"With Cypress, you can")]
+	 
+	 
+3. AND 
+
+    i want find locator with help of 2 attributes
+	
+	if both attributes present 
+	
+	//tagname[@attribute1name="attribute1value"][@attrname2='attrivalu2']
+	
+	//tagname[@attribute1name="attribute1value" and @attrname2='attrivalu2']
+	
+	ex: 
+	
+	//input[@type="text"][@name="mothernamed2eaabb7"]
+	
+4. OR 
+
+    i want find locator with help of 2 attributes
+	
+	but if any one attribute present 
+	
+	
+	//tagname[@attribute1name="attribute1value" or @attrname2='attrivalu2']
+		
+	//input[@type="text" or @name="mothernamed2eaabb7"]
+	
+5. Prefix  attribute value 
+
+  id = message1234
+  
+  id = message2345
+
+  //taganame[starts-with(@attributename, "prefixvalue)]
+  
+  //input[starts-with(@name, "name")]
+
+
+
+6. Indexing
+
+   (expression)[1]
+   
+    (expression)[last()]
+	
+	(//input[@class="oxd-input oxd-input--active"])[1] // username 
+	
+	(//input[@class="oxd-input oxd-input--active"])[last()] // password
+	
+    (//a[@class="oxd-main-menu-item"])[last()]
+	
+7. Parent node to child 
+
+     expression/childnode
+	 
+	 
+	 //td[text()='Full Name']/../td[3]/input
+	 
+8. child to parent 
+
+ expression/..
+ 
+ //td[text()='Password']/../td[3]/input
+ 
+Axes method ":
+
+1. following 
+
+  expression/following::expression
+  
+  //form[@class="oxd-form"]/following::input
+  
+   within  that perticular
+   
+  
+    //form[@class="oxd-form"]//following::input
+	
+	find all the following
+  {
+  
+  
+  
+  
+  //////////////////
+  
+  input
+  
+  
+  }
+
+2. Ancestor
+ 
+   expression/ancestor::expression
+   
+   //h5[@class="oxd-text oxd-text--h5 orangehrm-login-title"]/preceding::div
+
+3. following-sibling 
+
+ 
+  expression/following-sibling::expression
+  
+  //h5[@class="oxd-text oxd-text--h5 orangehrm-login-title"]/following-sibling::div
+ 
+--------------------------------------------------
+CSS Locators 
+
+cascading style sheets 
+
+
+
+1. Basic syntax 
+
+tagname[attribute='attributevalue']
+
+img[alt="company-branding"]
+
+input[placeholder="Username"]
+
+xpath = //tagename[@attribute='attributevalue']
+
+css - tagename[attribute='attributevalue']
+
+
+2. Text 
+
+we can not find CSS locators 
+
+no syntax 
+
+That is the reason 
+
+cy.contains('text')
+
+
+3. AND 
+
+
+tagname[attribute1name="attribute1value"][attrname2='attrivalu2']
+
+ex: input[placeholder="Username"][name="username"]
+
+ OR - No syantax
+ 
+4. Prefix 
+
+xpath - //taganame[starts-with(@attributename, "prefixvalue)]
+
+ CSS - tagname[attribute^='prefix value']
+ 
+ input[name^="name"]
+
+5. Suffix 
+
+   id=64736476name
+   
+   id =ygfewuifname 
+
+
+   CSS - tagname[attribute$='suffixvalue']
+   
+   span[class$="menu-item--name"]
+   
+6. contains 
+
+   CSS - tagname[attribute*='suffixvalue']
+   
+   span[class*="menu-item--name"]
+   
+Specific attribute in DOM
+
+7. ID 
+
+   #idvalue 
+   
+   #newpasswd1
+   
+   #newpasswd
+   
+   1st preference 
+   
+8. class Attribute 
+
+  .classvalue 
+  
+  .nomargin
+  
+  cy.get(".nomargin").check()
+  
+  class="oxd-text oxd-text--span oxd-main-menu-item--name"
+  
+  class = 'classvalu1 classvalue2 classvalue3'
+  
+  .oxd-text oxd-text--span oxd-main-menu-item--name
+  
+  .classvalu1.classvalue2.classvalue3
+  
+  .oxd-text.oxd-text--span.oxd-main-menu-item--name
+  
+-----------------------
+ 
+9. indexing is not possible -in CSS
+
+   xpath - (exprtession)[1]
+   
+           (exprtession)[5]
+           (exprtession)[last()]
+		   
+    3 methods 
+		   
+    cy.get("locator").first()
+	
+	starts from 0
+	cy.get("locator").eq(index)
+	cy.get("locator").last()
+
+10 Parent to child 
+
+
+    csslocator > tagname
+	
+	a[href="/web/index.php/maintenance/viewMaintenanceModule"] > svg
+	
+11. Child to parent 
+    
+	xpath - expression/..
+	
+	Not possible in CSS locators 
+	
+	cy.get('header').parent()
+	
+12. Axis Method
+
+ following , following-sibling 
+ 
+ we have syntax for following sibling 
+ 
+    csslocator + tagname (following-sibling tagname)
+ 
+	a[href="/web/index.php/maintenance/viewMaintenanceModule"] > svg +span
+
+============================================
+
+Playground Feature in cypress
+
+Dont rely on Playground
+
+tools 
+
+======================
+
+1 time 
+
+2 time locators 
+
+===============================================
+DOM 
+=================
+
+link 
+
+  Tagname - a
+  
+Table - 
+    table 
+	   thead
+	   tbody 
+	   td -coloumn
+	   tr - row
+	   
+check box 
+
+    - Tagname - input 
+	            type='checkbox'
+				
+Radio button 
+
+            - Tagname - input 
+	            type='radio'
+				
+Dropdown 
+      
+	  Tagname - Select 
+	              <option
+				  
+
+
+How many links are there in a page 
+
+//a - count
+
+How many Table are there in a page 
+
+//table - count
+
+=========================================
+
+cy.get('input[name="username"]').type("Admin") - cypress
+
+await page.locator('input[name="username"]').fill("Admin") - Playwright
+
+diver.findelemnt(by.CSS('input[name="username"]')).sendKeys("Admin")
+
