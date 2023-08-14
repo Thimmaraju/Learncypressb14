@@ -1907,3 +1907,44 @@ await page.locator('input[name="username"]').fill("Admin") - Playwright
 
 diver.findelemnt(by.CSS('input[name="username"]')).sendKeys("Admin")
 
+----------------------------
+
+fixtures
+import 
+
+cy.fixture() - load data
+cy.fixture - Data driven testing
+
+===============
+commands 
+
+=========================
+
+elements 
+
+button 
+
+edit box
+
+checkbox
+radio
+dropdown
+
+alerts
+iframe
+
+how handle the different tabs 
+
+shadow dom
+
+conditional testing 
+
+read file 
+
+write file 
+
+file upload
+
+file down 
+
+drag and drog 
