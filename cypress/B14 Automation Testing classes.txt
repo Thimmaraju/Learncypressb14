@@ -1948,3 +1948,17 @@ file upload
 file down 
 
 drag and drog 
+
+===============================================
+
+fixtures
+
+1. Import - JS feature
+
+2. cy.fixture(pathfromfixturefolder)
+
+==================
+
+commands.js
+
+
