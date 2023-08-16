@@ -7,6 +7,12 @@ class dashBoardPage{
        return "Admin"
      }
 
+     pimMenu(){
+
+      return "PIM"
+    
+    }
+
 }
 
 const dasboard = new dashBoardPage()

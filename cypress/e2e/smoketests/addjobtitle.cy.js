@@ -10,9 +10,7 @@ import jobtitle from "../../Pages/addjobtitle.po"
 describe('Verify Add Job Functionality', () => {
     it(`Verify adding job title with mandatory inputs`, () => {
      
-        cy.visit("/web/index.php/auth/login")
-
-        login.loginwithcreds(logindata.username, logindata.password)
+        cy.login("Admin", "admin123")
 
         cy.contains(dasboard.dashBoardMenu).should("be.visible")
 
@@ -26,9 +24,7 @@ describe('Verify Add Job Functionality', () => {
 
     it('Verify character limits for Job title field', () => {
      
-        cy.visit("/web/index.php/auth/login")
-
-        login.loginwithcreds(logindata.username, logindata.password)
+         cy.login("Admin", "admin123")
 
          cy.contains(dasboard.dashBoardMenu).should("be.visible")
 
