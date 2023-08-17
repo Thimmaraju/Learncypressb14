@@ -1957,8 +1957,244 @@ fixtures
 
 2. cy.fixture(pathfromfixturefolder)
 
+
+cy.fixture()
+
+
 ==================
 
 commands.js
+
+ 
+In built commands 
+
+ cy.visit()
+ cy.get()
+ cy.contains()
+ cy.screenshot()
+ cy.type()
+ cy.clear()
+ cy.click()
+ cy.fixture()
+ cy.eq()
+ cy.first()
+ cy.last()
+ cy.parent()
+ 
+ 
+cypressxpath 
+  cy.xpath()
+
+============================
+
+custom commands
+ our own commands 
+
+
+cy.addemployee()
+
+cy.login()
+
+cy.addjobtitle()
+
+
+===========================
+
+
+
+what is purpose 
+
+   re-usability 
+   
+   Maintanance should be good 
+
+---------------------
+
+how to create it 
+
+and How to  use 
+===========================
+
+cy.login()
+
+
+==========================================
+
+button :
+
+cy.get(locator).click()
+
+click on Hidden element 
+
+cy.get(locator).click({force:true})
+
+click on multiple elements 
+
+cy.get(locator).click({ multiple: true })
+
+edit box :
+---------
+
+cy.get(locator).type("admin{enter}", {force:true})
+
+check box:
+
+tagname : input
+attribute : type='checkbox'
+
+cy.get(locator).check()
+
+
+cy.get(locator).click()
+
+
+Radio 
+
+tganme - input
+attribute - type='radio'
+
+
+cy.get(locator).check()
+
+//Un check will not work for the Radio
+
+
+dropdown :
+
+tagname - select
+            <option
+			
+			<option
+			
+			
+			
+3 ways 
+
+1. text
+2. Value 
+3. index 
+
+cy.get(locator).select("Text")
+
+cy.get(locator).select("value")
+
+cy.get(locator).select(n)
+
+
+-----------------------
+
+Alerts
+
+what is difference between alert and Pop up 
+
+Alert 
+
+It s windows componet 
+
+YOu can not inspect elements on the alert 
+
+Pop up 
+
+Web component 
+
+YOu can inspect elements on the pop up 
+
+-----------------------------
+
+Alerts 
+
+3 types alerts 
+
+1. alert 
+
+2. Pompmt 
+
+3. confirm
+
+
+--------------------------------------------------
+
+Tabs
+
+Limition
+
+cypress
+Switching from one tab to another TAb is not possible 
+
+Handling multiple tabs is not possible
+
+Selenium 
+
+Switching from one tab to another TAb is possible.
+
+----------------------
+Write Script
+-----------------
+Open flipcart  - cy.visit()
+
+search "children toys"
+
+select any product first - remove target attribute 
+
+add to cart 
+
+-----------------------
+
+Iframes
+-----------
+
+100%
+
+
+When we working iframes there no much methods available like selenium 
+
+We can work with Iframe elemets 
+
+iframe 
+----------
+
+{
+
+
+   {
+   
+     //element 1
+   
+   }
+   
+   
+   {
+   
+      // element2
+    }
+   
+   {
+   
+   
+   }
+
+
+
+
+
+}
+
+======================
+
+Main 
+
+   switchto().frame1(locator )
+   work on element1 
+
+
+   Switchto. main()
+   
+   switchto.frame2()
+   
+   work on element2
+   
+==================================
+
+Mouse actions
 
 
