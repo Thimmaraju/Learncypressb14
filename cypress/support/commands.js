@@ -28,6 +28,10 @@
 
 
 //cy.addemployee()
+require('cypress-downloadfile/lib/downloadFileCommand')
+require('@4tw/cypress-drag-drop')
+import 'cypress-file-upload';
+
 Cypress.Commands.add('login', (username, password) => { 
 
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')

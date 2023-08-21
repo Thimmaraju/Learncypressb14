@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
 
 module.exports = defineConfig({
 
@@ -27,6 +28,7 @@ module.exports = defineConfig({
 
     setupNodeEvents(on, config) {
 
+      on('task', {downloadFile})
       require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
     },
