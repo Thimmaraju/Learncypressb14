@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node cypress/e2e/smoketests/convertXLSXtoJsonfile.js"
   },
   "author": "Raju",
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.17.1",
-    "cypress-downloadfile": "^1.2.3"
+    "cypress-downloadfile": "^1.2.3",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.4",

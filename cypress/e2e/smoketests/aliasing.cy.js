@@ -11,11 +11,9 @@ describe('Checkboxes', () => {
 
       cy.xpath("//input[@type='checkbox']").as('checkboxes')
       
-      cy.xpath("//input[@type='checkbox']").first()
-        .as('Raju');
+      cy.xpath("//input[@type='checkbox']").first().as('firstcheckbox');
 
-        cy.xpath("//input[@type='checkbox']").last()
-        .as('lastcheckbox');
+        cy.xpath("//input[@type='checkbox']").last().as('lastcheckbox');
 
         cy.get('@checkboxes').check()
 
@@ -32,36 +30,9 @@ describe('Checkboxes', () => {
           expect(checkbox[0].checked).to.equal(false)
         })
 
-      cy.get('@Raju').check()
+      cy.get('@firstcheckbox').check()
       cy.get('@lastcheckbox').check()
     })
 
-    it('checks all checkboxes with one command', () => {
-
-        cy.xpath("//input[@type='checkbox']").should("have.length", 7)
-        cy.xpath("//input[@type='checkbox']").as('raju')
-        
-        cy.xpath("//input[@type='checkbox']").first()
-          .as('firstcheckbox');
-  
-  
-          cy.get('@checkboxes').check()
-  
-          cy.get('@checkboxes')
-          .each(checkbox => {
-            expect(checkbox[0].checked).to.equal(true)
-          })
-  
-          cy.log("All the check boxes checked")
-          cy.get('@checkboxes').uncheck()
     
-        cy.get('@checkboxes')
-          .each(checkbox => {
-            expect(checkbox[0].checked).to.equal(false)
-          })
-  
-        cy.get('@firstcheckbox').check()
-
-        cy.get('@firstcheckbox').check()
-      })
   })

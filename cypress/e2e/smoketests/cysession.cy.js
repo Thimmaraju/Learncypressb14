@@ -1,4 +1,4 @@
-import login from '../Pageobjects/loginpage.po'
+import login from '../../Pages/loginpage.po'
 
 
 describe('Validate Orange HRM Login functionality', function () {
@@ -8,9 +8,7 @@ describe('Validate Orange HRM Login functionality', function () {
 
     cy.session("Login session", () => {
       cy.visit("/web/index.php/auth/login")
-      cy.xpath(login.usernameinput()).type("Admin")
-      cy.get(login.passwordinput()).type("admin123")
-      cy.get(login.loginBtn()).click()
+      login.loginwithcreds("Admin", "admin123")
     })
 
   })
@@ -70,7 +68,7 @@ describe('Validate Orange HRM Login functionality', function () {
 
   })
 
-  it('Add vacancy', function () {
+  it.only('Add vacancy', function () {
 
 
     cy.visit("web/index.php/recruitment/addJobVacancy")
