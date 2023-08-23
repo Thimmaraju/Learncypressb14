@@ -1,11 +1,13 @@
 const { defineConfig } = require("cypress");
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
 
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
 
+    "projectId": "b9dxge",
     "baseUrl":"https://opensource-demo.orangehrmlive.com",
     "defaultCommandTimeout":20000,
     "pageLoadTimeout": 120000, 
@@ -31,6 +33,8 @@ module.exports = defineConfig({
       on('task', {downloadFile})
       require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
+      allureWriter(on, config);
+            return config;
     },
   },
 });

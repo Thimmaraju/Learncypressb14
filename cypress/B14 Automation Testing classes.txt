@@ -2198,3 +2198,294 @@ Main
 Mouse actions
 
 
+=================
+
+drag and drop 
+
+It is very in cypress.
+
+1 line 
+
+plugin 
+
+
+defect: 
+------
+
+links 
+
+how many links present in a web page
+--------------------------------------
+
+//a
+
+Limitation 2
+
+
+in a single, navigating to multiple origins is not possible 
+
+
+
+xyz = "xyz"
+
+text 
+=====
+
+table 
+
+how many table are there in a web page 
+
+//table 
+
+===========================================
+
+Image
+
+//img
+
+cy.get('img[alt="client brand banner"]').should('be.visible')
+
+UI Automation
+
+
+API 
+
+plugins 
+
+
+========================================
+file upload 
+
+uploading a file 
+
+import 
+
+-------
+
+2 ways 
+
+plugins
+
+Attachfile()
+
+selectFile()
+
+
+file download 
+
+write file
+
+cy.writeFile()
+
+read file
+
+
+shadow file
+
+
+//shadow-root
+=============================================
+
+aliasing
+
+ Blr to Hyd - Blr - ATP - Karnool - Hyd - Route 1
+  
+ Blr to Hyd - Blr - Tirupati - Nellore - Vijayawada - Hyd  - Route 2
+ 
+ goto route 2
+ 
+ Aliasing 
+
+  cy.get("type='checkbox').first().as("firstcheckbox")
+  
+   cy.get("type='checkbox').last().as("lastcheckbox")
+   
+    cy.get("type='checkbox').as("checkboxes")
+	
+	
+	cy.get(@firstcheckbox).check()
+	cy.get(@lastcheckbox).check()
+	
+	cy.get(@checkboxes).check()
+	
+Conditional Testing
+
+============================
+
+Verify user can able to remove wells 
+
+flow 1
+
+login 
+
+dashboard 
+
+if well is present 
+
+remove all wells
+
+flow 2 
+
+login 
+
+dashboard 
+
+if well is not present  
+
+create a well 
+
+verify remove well or not 
+===========================================
+
+cy.session()
+
+login {
+
+}
+
+verify user can able to post a image in buzz
+
+1. Navigate buzz module
+
+4. click on share photos 
+
+5. upload a image 
+
+6. click on share button and success
+
+Verify user able to add job titles 
+
+1. navigate add job title page 
+
+6. click on add button 
+
+7. enter the job title 
+8. enter the job description
+
+9. click on save button 
+
+===============================================
+Verify add employee
+
+1. navigate to add employee page 
+
+2. enter firstname 
+
+3. enter lastname
+
+4. click save 
+
+=======================================
+excel to json
+
+generic code to convert excel to json 
+
+
+datadriven  execl data
+
+
+----------------------------------------
+
+reports 
+
+Mochawesome html reporter 
+
+Allure 
+
+cypress cloud - free 3 members / pay
+
+=============
+
+
+API test Automation
+
+var orderid = ""
+cy.request("Medthod", "url", "body").then((response) =>{
+
+  expect(response.status).to.equal(200)
+  orderid = response.body.id
+
+})
+
+cy.request({
+   method : GET
+   
+   url : "dgvbfhweb"
+   
+   Headers:{
+   
+       host: orderid
+	   refferer: "befdhbnewhf"
+	   cookie: "dewqbudfhue"
+	   authenticagtion: "bfkjnvhkyr"
+   
+   },
+   body:{
+   
+   
+   
+   }
+
+
+}).then((response) =>{
+
+  expect(response.status).to.equal(200)
+
+
+})
+
+======================
+
+Reports 
+
+1. Mochawesome HTML Reports 
+
+2. Allure HTML reports 
+
+
+cypress cloud reports 
+
+google photos 
+
+drive
+
+upload to reports to cloud
+
+ U can give access 
+ 
+ 
+ free for 3 members
+ 
+
+ otherwise pay 
+
+Reports - HTML and cloud 
+
+==================================
+
+BDD 
+
+Behaviour driven development
+
+how to write feature files using Gherkin
+
+Gherkin Key words 
+
+Given 
+
+When 
+
+Then
+
+And 
+
+But
+
+Scenario
+
+Scenario outline
+
+Background 
+
+===================================
+
